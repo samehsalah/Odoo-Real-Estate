@@ -1,0 +1,70 @@
+<odoo>
+  <!-- Property Form View -->
+  <record id="view_form_property" model="ir.ui.view">
+    <field name="name">الوحدات السكنية</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <form string="الوحدات السكنية">
+        <sheet>
+          <group colspan="2">
+            <group>
+              <field name="unit_number"/>
+              <field name="building_id" widget="many2one_tags"/>
+              <field name="garage_number"/>
+              <field name="is_development_garage"/>
+            </group>
+            <group>
+              <field name="total_amount" />
+              <field name="total_area"/>
+              <field name="notes"/>
+              <field name="dedication_date"/>
+            </group>
+          </group>
+
+          <notebook>
+            <page name="installment_tab" string="الاقساط">
+              <field name="installment_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="amount"/>
+                  <field name="due_date"/>
+                  <field name="paid_date"/>
+                  <field name="bank_date"/>
+                  <button name="%(action_installment_report)d" type="action" string="Print" context="{'active_ids': [id]}"/>
+                </tree>
+              </field>
+            </page>
+            <page name="ownership_tab" string="الملاك">
+              <!-- Add fields related to ownerships here -->
+                <field name="ownerhip_ids">
+                  <tree >
+                    <field name="name_owner_ids"/>
+                  </tree>
+                </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+  <!-- Add the tree view for estate.property -->
+  <record id="view_tree_property" model="ir.ui.view">
+    <field name="name">estate.property.tree</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <tree string="Estate Property Tree">
+        <field name="owner_names" />
+        <field name="unit_number"/>
+        <field name="building_id" widget="many2one_tags"/>
+        <field name="total_amount"/>
+        <field name="total_area"/>
+        <field name="garage_number"/>
+        <field name="is_development_garage" />
+        <field name="dedication_date"/>
+      </tree>
+    </field>
+  </record>
+
+</odoo>

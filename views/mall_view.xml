@@ -1,0 +1,41 @@
+<odoo>
+        <!-- Form View -->
+        <record id="view_mall_form" model="ir.ui.view">
+            <field name="name">mall.form</field>
+            <field name="model">mall</field>
+            <field name="arch" type="xml">
+                <form string="mall Form">
+                    <sheet>
+                        <group>
+                            <field name="mall_name"/>
+                        </group>
+
+            <notebook>
+            <!-- Building Tab -->
+            <page name="building_property_tab" string="الوحدات">
+              <field name="store_ids" eval="True">
+                <tree>
+                  <field name="unit_number" />
+                </tree>
+              </field>
+            </page>
+            </notebook>
+
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_mall_tree" model="ir.ui.view">
+            <field name="name">mall Tree</field>
+            <field name="model">mall</field>
+            <field name="arch" type="xml">
+                <tree string="mall Tree">
+                    <field name="mall_name"/>
+                </tree>
+            </field>
+        </record>
+
+</odoo>

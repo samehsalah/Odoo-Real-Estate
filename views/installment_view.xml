@@ -1,0 +1,51 @@
+<odoo>
+        <!-- Form View -->
+        <record id="view_installment_form" model="ir.ui.view">
+            <field name="name">installment.form</field>
+            <field name="model">installment</field>
+            <field name="arch" type="xml">
+                <form string="Installment Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="due_date"/>
+                            <field name="paid_date"/>
+                            <field name="bank_date"/>
+                            <field name="notes" />
+                            <field name="installment_copy" widget="image" />
+                            <field name="amount_in_words_arabic" readonly="1"/>
+
+                        </group>
+
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="view_installment_tree" model="ir.ui.view">
+            <field name="name">installment.tree</field>
+            <field name="model">installment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="owner_names"/>
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <field name="due_date"/>
+                    <field name="paid_date"/>
+                    <field name="bank_date"/>
+                    <field name="unit_number"/>
+                    <field name="building_number"/>
+                    <field name="notes" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+
+</odoo>

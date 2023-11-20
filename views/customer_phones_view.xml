@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- Define the view for the customer.phones model -->
+        <record id="view_customer_phones_form" model="ir.ui.view">
+            <field name="name">customer.phones.form</field>
+            <field name="model">customer.phones</field>
+            <field name="arch" type="xml">
+                <form string="Customer Phones Form">
+                    <group>
+                        <field name="customer_phone"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

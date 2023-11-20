@@ -1,0 +1,43 @@
+<odoo>
+        <!-- Form View -->
+        <record id="view_building_form" model="ir.ui.view">
+            <field name="name">building.form</field>
+            <field name="model">building</field>
+            <field name="arch" type="xml">
+                <form string="building Form">
+                    <sheet>
+                        <group>
+                            <field name="buiding_name"/>
+                        </group>
+
+            <notebook>
+            <!-- Building Tab -->
+            <page name="building_property_tab" string="الوحدات">
+              <field name="property_ids">
+                <tree>
+                  
+                  <field name="unit_number"/>
+                </tree>
+              </field>
+            </page>
+              </notebook>
+
+            </sheet>
+                </form>
+
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="view_building_tree" model="ir.ui.view">
+            <field name="name">building Tree</field>
+            <field name="model">building</field>
+            <field name="arch" type="xml">
+                <tree string="building Tree" >
+                    <field name="buiding_name"/>
+                </tree>
+            </field>
+        </record>
+
+</odoo>

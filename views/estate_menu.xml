@@ -1,0 +1,94 @@
+<odoo>
+
+  <!-- estate App Menu -->
+
+  <menuitem id="menu_estate" name="كمبوند العاصمة" />
+
+    <!-- Action to open the Book list -->
+
+  <record id="action_estate_property" model="ir.actions.act_window">
+    <field name="name">الاسماء</field>
+    <field name="res_model">estate.contact</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Menu item to open the Property list -->
+  <menuitem id="menu_estate_property" name="الأسماء" parent="menu_estate" action="action_estate_property"/>
+
+  
+
+                            <!-- Action to open building list  -->
+            <record id="action_building" model="ir.actions.act_window">
+                <field name="name">سكنى</field>
+                <field name="res_model">building</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <!-- Menu Item -->
+            <!-- Define a top-level menu item -->
+            <menuitem id="menu_building_top" parent="menu_estate"  name="العمارات" sequence="10" action="action_building"/>
+
+
+
+                            <!-- Action to open Mall list  -->
+            <record id="action_mall" model="ir.actions.act_window">
+                <field name="name">تجارى</field>
+                <field name="res_model">mall</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <!-- Menu Item -->
+            <!-- Define a top-level menu item -->
+            <menuitem id="menu_mall_top" parent="menu_estate"  name="التجارى" sequence="10" action="action_mall"/>
+
+
+              <!-- installment report-->
+
+                <record id="action_install_report" model="ir.actions.act_window">
+                <field name="name">الاقساط- تقارير</field>
+                <field name="res_model">installment</field>
+                <field name="view_mode">tree</field>
+            </record>
+
+            <!-- Menu Item -->
+
+
+            <!-- property report-->
+
+                <record id="action_property_report" model="ir.actions.act_window">
+                <field name="name">وحدات سكنية- تقارير</field>
+                <field name="res_model">estate.property</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <!-- Menu Item -->
+            <!-- Define a top-level menu item -->
+
+
+            <!-- store report-->
+
+                <record id="action_store_report" model="ir.actions.act_window">
+                <field name="name">وحدات تجاريه- تقارير</field>
+                <field name="res_model">store</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <!-- Menu Item -->
+            <!-- Define a top-level menu item -->
+
+            <!-- Existing code up to the </notebook> section -->
+
+            <!-- Menu item for Reports -->
+            <menuitem id="menu_reports" name="تقارير" parent="menu_estate" sequence="20" />
+
+            <!-- Submenu for Installment Report -->
+            <menuitem id="menu_install_report" name="الاقساط- تقارير" parent="menu_reports" sequence="10" action="action_install_report" />
+
+            <!-- Submenu for Property Report -->
+            <menuitem id="menu_property_report" name="وحدات سكنية- تقارير" parent="menu_reports" sequence="20" action="action_property_report" />
+
+            <!-- Submenu for Store Report -->
+            <menuitem id="menu_store_report" name="وحدات تجاريه- تقارير" parent="menu_reports" sequence="30" action="action_store_report" />
+
+
+</odoo>

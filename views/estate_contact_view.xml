@@ -1,0 +1,89 @@
+<odoo>
+    <!-- Form View for EstateContact -->
+    <record id="view_estate_contact_form" model="ir.ui.view">
+        <field name="name">estate.contact.form</field>
+        <field name="model">estate.contact</field>
+        <field name="arch" type="xml">
+            <form string="Estate Contact Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="customer_name"/>
+                            <field name="customer_address"/>
+                            <field name="job"/>
+                            <field name="id_number"/>
+                            <field name="cutomer_notes"/>
+                        </group>
+                        <notebook>
+                            <page string="ارقام التواصل">
+                                <field name="phone_ids">
+                                    <tree >
+                                        <field name="customer_phone"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                        <page string="الملفات">
+                                <field name="files_ids">
+                                    <tree>
+                                        <field name="files_name"/>
+                                        <field name="file_upload"/>
+                                    </tree>
+                                </field>
+                            </page>
+                
+                            <page string="الملكيات - سكنى">
+                                <field name="ownerhip_ids">
+                                    <tree>
+                                        <field name="property_unit_ids"  />
+                                        <field name="ownership_building" />
+                                        <field name="start_date" />
+                                        <field name="end_date"  />
+                                        <field name="is_current" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="الملكيات - تجارى">
+                                <field name="ownerhip_commerce_ids">
+                                    <tree>
+                                        <field name="store_unit_ids" />
+                                        <field name="ownership_mall" />
+                                        <field name="name_owner_commerce_ids" />
+                                        <field name="start_date" />
+                                        <field name="end_date"  />
+                                        <field name="is_current" />
+                                    </tree>
+                                </field>
+                            </page>
+
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+<record id="view_estate_contact_search" model="ir.ui.view">
+    <field name="name">estate contact Search</field>
+    <field name="model">estate.contact</field>
+    <field name="arch" type="xml">
+        <search string="estate contact Search">
+            <field name="customer_name" string="Customer Name"/>
+        </search>
+    </field>
+</record>
+
+<record id="view_estate_contact_tree" model="ir.ui.view">
+    <field name="name">estate contact Tree</field>
+    <field name="model">estate.contact</field>
+    <field name="arch" type="xml">
+        <tree string="estate contact Tree">
+            <field name="customer_name"/>
+        </tree>
+    </field>
+</record>
+
+
+</odoo>
